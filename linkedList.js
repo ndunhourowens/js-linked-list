@@ -36,10 +36,10 @@ function linkedListGenerator(){
 
   function _add(value) {
     var newNode = createNode(value);
-    if (train.getTail() === null) {
+    if (tail === null) {
       head = newNode;
     }else {
-      train.getTail().next = newNode;
+      tail.next = newNode;
     }
     tail = newNode;
     length = length + 1;
@@ -50,11 +50,20 @@ function linkedListGenerator(){
   }
 
   function _get(number) {
-
+    var current = train.getHead();
+    //retrun false if no node is found'
+    if (number >= length) {
+      return false;
+    }
+    for (var i = 0; i < number; i++) {
+      current = current.next;
+    }
     return current;
   }
 
   function _remove(number) {
+
+
 
   }
 
