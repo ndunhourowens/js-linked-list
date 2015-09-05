@@ -13,27 +13,46 @@ function linkedListGenerator(){
     insert : _insert
   };
 
+  var head = null;
+  var tail = null;
+
+  function createNode(value) {
+    return  { value : value,
+              next : null};
+  }
+
   function _getHead() {
 
+    return head;
+    ;
   }
 
   function _getTail() {
 
+    return tail;
   }
 
-  function _add() {
+  function _add(value) {
+    var newNode = createNode(value);
+    if (train.getTail() === null) {
+      head = newNode;
+    }else {
+      train.getTail().next = newNode;
+    }
+    tail = newNode;
+
+    return newNode;
+  }
+
+  function _get(number) {
 
   }
 
-  function _get() {
+  function _remove(number) {
 
   }
 
-  function _remove() {
-
-  }
-
-  function _insert() {
+  function _insert(value,number) {
 
   }
 
