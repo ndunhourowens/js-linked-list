@@ -16,6 +16,8 @@ function linkedListGenerator(){
   var head = null;
   var tail = null;
 
+  var length = 0;
+
   function createNode(value) {
     return  { value : value,
               next : null};
@@ -24,7 +26,7 @@ function linkedListGenerator(){
   function _getHead() {
 
     return head;
-    ;
+
   }
 
   function _getTail() {
@@ -40,12 +42,16 @@ function linkedListGenerator(){
       train.getTail().next = newNode;
     }
     tail = newNode;
+    length = length + 1;
+    console.log(newNode);
 
     return newNode;
+
   }
 
   function _get(number) {
 
+    return current;
   }
 
   function _remove(number) {
@@ -55,6 +61,5 @@ function linkedListGenerator(){
   function _insert(value,number) {
 
   }
-
-  return train;
+    return train;
 }
