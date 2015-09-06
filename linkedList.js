@@ -3,6 +3,8 @@
  * @description  Main Module
  * @return {Object} an object exposing methods to be used to manipulate a linked list
  */
+// var eyes = require('eyes')
+
 function linkedListGenerator() {
   var train = {
     getHead : _getHead,
@@ -50,33 +52,25 @@ function linkedListGenerator() {
     }
 
     length = length + 1;
-    console.log('the length', length);
-    console.log('the list', list);
     return newNode;
 
   }
 
   function _get(number) {
     var current = _getHead();
-    console.log('number: ', number);
-    console.log('length: ', length);
 
     //return false if no node is found'
-    // if (number > length) {
-    //   return false;
-    // }
+    if (number > length) {
+      return false;
+    }
 
     for (var i = 0; i < length; i++) {
-      if ( i === number) {
-
-        console.log('returning');
+      if ( i === number) {sss
         return current;
       }
-      console.log('outside if');
       current = current.next;
 
     }
-    console.log('final return in get');
     return false;
   }
 
@@ -113,18 +107,20 @@ function linkedListGenerator() {
     var prevNode = _get(number - 1);
 
     // if there are no nodes
-    if (number < 0 || number > length) {
+    if (number < 0 || number >= length) {
       // if number is negative or number is greater then length
       return false;
     }else if ( number === 0) {
       // insert node above the head
       newNode.next = head;
       head = newNode;
-    }else if ( number < length) {
+      length = length + 1;
+    }else {
       newNode.next = currNode;
       prevNode.next = newNode;
+      length = length + 1;
     }
-    return 'lost for ever ';
+    return newNode;
   }
   return train;
 }
